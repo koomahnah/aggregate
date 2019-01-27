@@ -25,18 +25,18 @@
     AppContext ctx = AppContext.getInstance();
     if (request.getParameter("logout_button") != null) {
         ctx.logout();%>
-Logged you out.</br>
+        Logged you out.</br>
 <%
         return;
     }
     if (request.getParameter("login_button") != null) {
         if (ctx.login(request.getParameter("login"), request.getParameter("password"))) {
             %>
-<%=request.getParameter("login")%> logged in!
-<%
-        response.sendRedirect("index.jsp");
+            <%=request.getParameter("login")%> logged in!
+<%            response.sendRedirect("index.jsp");
+              return;
         } else { %>
-Failed to log in!
+                Failed to log in!
 <%
             return;
         }
@@ -46,7 +46,7 @@ Failed to log in!
         response.sendRedirect("index.jsp");
     } else {
 %>
-Failed to register!
+        Failed to register!
 <%
         return;
     } %>

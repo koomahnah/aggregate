@@ -92,7 +92,7 @@
             <% if (c.getAdder() == null) {%>
             <div class="entryinfo">Added by Daler Menhdi on <%=c.getDateCreated().toString()%></div>
             <% } else { %>
-            <div class="entryinfo">Added by <%=c.getAdder().getLogin()%> on <%=c.getDateCreated().toString()%></div>
+            <div class="entryinfo">Added by <%=c.getAdder()%> on <%=c.getDateCreated().toString()%></div>
             <% } %>
           <div class="entrycontent"><%=c.getDescription()%></div>
         </div>

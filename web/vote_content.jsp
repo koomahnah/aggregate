@@ -17,9 +17,9 @@
     Integer index = new Integer(request.getParameter("content_id"));
     if (index < ctx.getContents().size())
         if (request.getParameter("up").equals("1"))
-            ctx.getContents().get(index).vote(ctx.getCurrentUser());
+            ctx.voteContent(ctx.getContents().get(index), ctx.getCurrentUser());
         else
-            ctx.getContents().get(index).downvote(ctx.getCurrentUser());
+            ctx.downvoteContent(ctx.getContents().get(index), ctx.getCurrentUser());
     response.sendRedirect("index.jsp");
 %>
 
